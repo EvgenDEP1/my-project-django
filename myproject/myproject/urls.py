@@ -21,6 +21,9 @@ from django.urls import path
 urlpatterns = [
     path('', mainapp.index),
     path('catalog/', mainapp.catalog),
+
+    path('catalog/category/<int:pk>/', mainapp.catalog_page, name='catalog_page'),
+
     path('basket/', mainapp.basket),
     path('admin/', admin.site.urls),
 ]

@@ -1,6 +1,8 @@
 from django.contrib import admin
 
-from mainapp.models import SubjectCategory, Course
+from mainapp.models import Subscription, Style, Hall, Trainer
 
-admin.site.register(SubjectCategory)
-admin.site.register(Course)
+admin.site.register(Subscription)
+admin.site.register(Style)
+admin.site.register(Hall)
+admin.site.register(Trainer)
