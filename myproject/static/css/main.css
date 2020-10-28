@@ -1,0 +1,25 @@
+.main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    background-color: #f1f1f1;
+    display: inline-block;
+}
+
+.main-menu li {
+    float: left;
+}
+
+.main-menu li a {
+    display: block;
+    color: #debebe;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.main-menu li a:hover {
+    background-color: #555;
+    color: white;
+    transition: 0.3s;
+}
