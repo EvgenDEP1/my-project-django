@@ -21,9 +21,9 @@ def basket(request):
 
 
 def catalog_page(request, pk):
-    styles = Style.objects.filter(category_id=pk)
-    halls = Hall.objects.filter(category_id=pk)
-    trainers = Trainer.objects.filter(category_id=pk)
+    styles = Style.objects.filter(subscription_id=pk)
+    halls = Hall.objects.filter(subscription_id=pk)
+    trainers = Trainer.objects.filter(subscription_id=pk)
     context = {
         'styles': styles,
         'halls': halls,

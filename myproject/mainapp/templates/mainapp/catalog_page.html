@@ -4,7 +4,17 @@
     <h1>Страница каталога</h1>
     <div class="courses-menu">
         <ul>
-            {% for item in categories %}
+            {% for item in styles %}
+                <li>
+                    <a href="#">{{ item }}</a>
+                </li>
+            {% endfor %}
+            {% for item in halls %}
+                <li>
+                    <a href="#">{{ item }}</a>
+                </li>
+            {% endfor %}
+            {% for item in trainers %}
                 <li>
                     <a href="#">{{ item }}</a>
                 </li>

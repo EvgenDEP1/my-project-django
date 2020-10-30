@@ -14,10 +14,10 @@ class Subscription(models.Model):
 
 
 class Style(models.Model):
-    name = models.CharField(max_length=128)
-    description = models.TextField(blank=True)
     subscription = models.ForeignKey(Subscription,
                                      on_delete=models.CASCADE)
+    name = models.CharField(max_length=128)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
@@ -28,11 +28,11 @@ class Style(models.Model):
 
 
 class Hall(models.Model):
+    subscription = models.ForeignKey(Subscription,
+                                     on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
     people_capacity = models.IntegerField(default=0)
     availability_of_inventory = models.TextField(blank=True)
-    subscription = models.ForeignKey(Subscription,
-                                     on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -43,11 +43,11 @@ class Hall(models.Model):
 
 
 class Trainer(models.Model):
+    subscription = models.ForeignKey(Subscription,
+                                     on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
     phone = models.CharField(max_length=128)
     email = models.CharField(max_length=128)
-    subscription = models.ForeignKey(Subscription,
-                                     on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
