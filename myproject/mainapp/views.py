@@ -27,3 +27,12 @@ def catalog_page(request, pk):
     }
 
     return render(request, 'mainapp/catalog_page.html', context)
+
+
+def book_page(request, pk):
+    book = Book.objects.get(pk=pk)
+    context = {
+        'book': book,
+    }
+
+    return render(request, 'mainapp/book_page.html', context)

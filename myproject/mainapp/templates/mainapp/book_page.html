@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <h1>Книга</h1>
+    <p class="">
+        {{ book.name }}
+    </p>
+    <p class="book-author">
+
+        Автор: {{ book.author }}
+    </p>
+    <p class="book-price">
+        Цена: {{ book.price }}
+    </p>
+    <p class="book-publication-year">
+        Год издания: {{ book.publication_year }}
+    </p>
+    <p class="book-desc">
+        Аннотация: {{ book.desc }}
+    </p>
+    <p class="book-age">
+        Возростное ограничение: {{ book.age }}
+    </p>
+    <p class="book-cover">
+        Тип обложки: {{ book.cover }}
+    </p>
+
+{% endblock %}
