@@ -1,8 +1,7 @@
 from django.contrib import admin
 
-from mainapp.models import Subscription, Style, Hall, Trainer
+from mainapp.models import Publisher, Book
 
-admin.site.register(Subscription)
-admin.site.register(Style)
-admin.site.register(Hall)
-admin.site.register(Trainer)
+admin.site.register(Publisher)
+admin.site.register(Book)
+

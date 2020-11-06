@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from mainapp.models import Subscription, Style, Hall, Trainer
+from mainapp.models import Publisher, Book
 
 
 def index(request):
@@ -8,7 +8,7 @@ def index(request):
 
 
 def catalog(request):
-    categories = Subscription.objects.all()
+    categories = Publisher.objects.all()
     context = {
         'categories': categories
     }
@@ -21,13 +21,9 @@ def basket(request):
 
 
 def catalog_page(request, pk):
-    styles = Style.objects.filter(subscription_id=pk)
-    halls = Hall.objects.filter(subscription_id=pk)
-    trainers = Trainer.objects.filter(subscription_id=pk)
+    books = Book.objects.filter(publisher_id=pk)
     context = {
-        'styles': styles,
-        'halls': halls,
-        'trainers': trainers,
+        'books': books,
     }
 
     return render(request, 'mainapp/catalog_page.html', context)

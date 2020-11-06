@@ -22,7 +22,7 @@ urlpatterns = [
     path('', mainapp.index),
     path('catalog/', mainapp.catalog),
 
-    path('catalog/subscription/<int:pk>/', mainapp.catalog_page, name='catalog_page'),
+    path('catalog/publisher/<int:pk>/', mainapp.catalog_page, name='catalog_page'),
 
     path('basket/', mainapp.basket),
     path('admin/', admin.site.urls),
