@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <title>Главная</title>
+        <title>{{ page_title|default:"главная"|capfirst }}</title>
         {% block css %}
             <link rel="stylesheet" href="../../../static/css/main.css">
         {% endblock %}
@@ -11,13 +11,16 @@
         <div class="main-menu">
             <ul>
               <li>
-                  <a href="/">Главная</a>
+                  <a href="{% url 'main:index' %}">Главная</a>
               </li>
               <li>
-                  <a href="/catalog/">Каталог</a>
+                  <a href="{% url 'main:catalog' %}">Каталог</a>
               </li>
               <li>
-                  <a href="/basket/">Корзина</a>
+                  <a href="{% url 'basket' %}">Корзина</a>
+              </li>
+              <li>
+                  <a href="{% url 'auth:login' %}">Войти</a>
               </li>
             </ul>
         </div>
