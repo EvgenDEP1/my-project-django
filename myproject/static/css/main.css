@@ -23,3 +23,18 @@
     color: white;
     transition: 0.3s;
 }
+
+.login-form, .register-form{
+    margin: 15px auto;
+    width: 50%;
+}
+
+.login-form a {
+    margin-top: 15px;
+}
+
+.form-title {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
