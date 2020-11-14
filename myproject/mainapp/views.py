@@ -17,10 +17,6 @@ def catalog(request):
     return render(request, 'mainapp/catalog.html', context)
 
 
-def basket(request):
-    return render(request, 'mainapp/basket.html')
-
-
 def catalog_page(request, pk):
     books = Book.objects.filter(publisher_id=pk)
     context = {
