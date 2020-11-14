@@ -24,5 +24,8 @@
     <p class="book-cover">
         Тип обложки: {{ book.cover }}
     </p>
+    <a href="{% url 'basket:add' book.id %}">
+        Добавить
+    </a>
 
 {% endblock %}
