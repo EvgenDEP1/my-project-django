@@ -6,8 +6,14 @@ from django.urls import reverse
 
 from mainapp.models import Book
 
+
 def index(request):
-    return render(request, 'basketapp/basket.html')
+    items = BookBasket.objects.filter(user=request.user)
+    context = {
+        'object_list': items
+    }
+
+    return render(request, 'basketapp/basket.html', context)
 
 
 def add(request, book_id):
@@ -19,3 +25,9 @@ def add(request, book_id):
 
     return HttpResponseRedirect(reverse('mainapp:catalog_page',
                                         kwargs={'pk': book.publisher_id}))
+
+
+def remove(request, book_basket_id):
+    item = BookBasket.objects.get(id=book_basket_id)
+    item.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
