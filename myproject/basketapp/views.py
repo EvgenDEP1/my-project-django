@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 
 from basketapp.models import BookBasket
@@ -28,6 +28,9 @@ def add(request, book_id):
 
 
 def remove(request, book_basket_id):
-    item = BookBasket.objects.get(id=book_basket_id)
-    item.delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    if request.is_ajax():
+        item = BookBasket.objects.get(id=book_basket_id)
+        item.delete()
+        # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return JsonResponse({'status': 'ok',
+                             'book_basket_id': book_basket_id})
