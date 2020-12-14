@@ -24,5 +24,7 @@ urlpatterns = [
 
     path('basket/', include('basketapp.urls', namespace='basket')),
 
+    path('student/', include('studentapp.urls', namespace='student')),
+
     path('admin/', admin.site.urls),
 ]

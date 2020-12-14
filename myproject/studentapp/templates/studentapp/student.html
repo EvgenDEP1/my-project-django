@@ -1,0 +1,21 @@
+{% extends 'studentapp/base.html' %}
+
+{% block content %}
+
+    <h1>Тут находятся студенты, пока только я)</h1>
+    <h3>Делал на скорую руку и не знаю правильно сделал или нет)</h3>
+    <div class="catalog-menu">
+        <ul>
+            {% for item in students %}
+                <li>
+                    <a href="#">{{ item }}</a>
+                </li>
+            {% endfor %}
+            <p class="student-surname">
+
+                Фамилия: {{ more.surname }}
+            </p>
+        </ul>
+    </div>
+
+{% endblock %}

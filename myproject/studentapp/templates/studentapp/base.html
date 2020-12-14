@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
@@ -11,7 +10,6 @@
         {% block js %}
             <script src="../../../static/js/jquery-3.2.1.min.js"></script>
             <script src="../../../static/js/bootstrap.min.js"></script>
-            <script src="{% static 'js/basket.js' %}"></script>
         {% endblock %}
     </head>
     <body>
@@ -40,8 +38,5 @@
         </div>
         {% block content %}
         {% endblock %}
-        <script>
-
-        </script>
     </body>
 </html>
